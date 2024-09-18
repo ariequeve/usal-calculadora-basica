@@ -1,20 +1,25 @@
 #include <stdio.h>
 
 int main() {
-    int opcion;
+    int operacion;
     float num1, num2, resultado;
 
-    printf("Selecciona una operación: \n");
-    printf("1. Suma\n");
-    printf("2. Resta\n");
-    printf("3. Multiplicación\n");
-    printf("4. División\n");
-    scanf("%d", &opcion);
+    printf("Mi calculadora tiene las siguientes operaciones: \n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n\nSelecciona la que quiere utilizar: ");
 
-    printf("Ingresa dos números: ");
-    scanf("%f %f", &num1, &num2);
+    if (scanf("%d", &operacion) != 1) {
+        printf("Error: Entrada no válida. Debes ingresar un número.\n");
+        return 1;
+    }
 
-    switch(opcion) {
+    if(operacion >= 1 && operacion <= 4){
+        printf("Ingresa dos números: ");
+        
+        if (scanf("%f %f", &num1, &num2) != 2) {
+            printf("Error: Entrada no válida. Debes ingresar dos números.\n");
+            return 1;
+        }
+
+        switch(operacion) {
         case 1:
             resultado = num1 + num2;
             printf("Resultado: %.2f\n", resultado);
@@ -35,8 +40,9 @@ int main() {
                 printf("Error: División por cero.\n");
             }
             break;
-        default:
-            printf("Opción inválida.\n");
+    }
+    }else{
+        printf("Error: Opción no válida. Selecciona una operación entre 1 y 4.\n");
     }
 
     return 0;
