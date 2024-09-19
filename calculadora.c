@@ -1,33 +1,34 @@
 #include <stdio.h>
 
 int main() {
-    int opcion;
+    // Cambio el tipo de variable de los operadores para que lea caracteres
+    char opcion;
     float num1, num2, resultado;
-
-    printf("Selecciona una operación: \n");
-    printf("1. Suma\n");
-    printf("2. Resta\n");
-    printf("3. Multiplicación\n");
-    printf("4. División\n");
-    scanf("%d", &opcion);
+    // Modifico la interfaz para que el usuario entienda qué tiene que hacer
+    printf("Ingrese el símbolo de la operación: \n"); 
+    printf("Suma: (+)\n");
+    printf("Resta: (-)\n");
+    printf("Multiplicación: (*)\n");
+    printf("División: (/)\n");
+    scanf("%c", &opcion);
 
     printf("Ingresa dos números: ");
     scanf("%f %f", &num1, &num2);
-
+    // Modifico el switch para que funcione con los caracteres correspondientes
     switch(opcion) {
-        case 1:
+        case '+':
             resultado = num1 + num2;
             printf("Resultado: %.2f\n", resultado);
             break;
-        case 2:
+        case '-':
             resultado = num1 - num2;
             printf("Resultado: %.2f\n", resultado);
             break;
-        case 3:
+        case '*':
             resultado = num1 * num2;
             printf("Resultado: %.2f\n", resultado);
             break;
-        case 4:
+        case '/':
             if(num2 != 0) {
                 resultado = num1 / num2;
                 printf("Resultado: %.2f\n", resultado);
