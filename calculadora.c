@@ -11,7 +11,7 @@ int main()
     printf("Resta: (-)\n");
     printf("Multiplicación: (*)\n");
     printf("División: (/)\n");
-    printf("Comparacion: (C)\n");
+    printf("Comparacion: (=)\n");
     scanf("%c", &opcion);
 
     printf("Ingresa dos números: ");
@@ -42,8 +42,7 @@ int main()
             printf("Error: División por cero.\n");
         }
         break;
-    case 'c':
-    case 'C':
+    case '=':
         if (num1 > num2)
         {
             printf("%.2f es mayor que %.2f\n", num1, num2);
